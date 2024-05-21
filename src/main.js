@@ -60,8 +60,7 @@ function handleSubmitPhotoRequest(event) {
       }
     })
     .catch(error => {
-      console.error('Error fetching data:', error);
-      message('An error occurred. Please try again later.');
+      message('An error occurred. Please try again later.', error);
     })
     .finally(() => {
       hideLoader();
@@ -77,8 +76,8 @@ function hideLoader() {
   ref.cssLoader.style.display = 'none';
 }
 
-function message(text) {
-  iziToast.error({
+function message(text, title = null) {
+  const toastParams = {
     message: text,
     backgroundColor: '#EF4040',
     iconUrl: iconError,
@@ -93,5 +92,10 @@ function message(text) {
     titleColor: '#FFF',
     messageColor: '#FFF',
     position: 'topRight',
-  });
+  };
+  if (title !== null) {
+    toastParams.title = `${title}`;
+  }
+
+  iziToast.show(toastParams);
 }
