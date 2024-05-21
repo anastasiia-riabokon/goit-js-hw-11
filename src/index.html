@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="img/icons8-кошка-64.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoIT HW 11</title>
     <link
@@ -13,16 +13,18 @@
   </head>
   <body>
     <section class="container">
-      <input
-        class="input-field"
-        type="text"
-        name="nameCar"
-        id="nameCar"
-        placeholder="Search images..."
-      />
-      <button class="btn" type="submit"><span>Search</span></button>
+      <form class="form js-form">
+        <input
+          class="input-field"
+          type="text"
+          name="query"
+          placeholder="Search images..."
+        />
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <div class="container-images js-container-images"></div>
     </section>
-    <div class="loader"></div>
+    <div class="loader js-loader"></div>
 
     <script type="module" src="./main.js"></script>
   </body>

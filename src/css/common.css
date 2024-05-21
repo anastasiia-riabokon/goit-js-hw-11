@@ -1,21 +1,26 @@
 body {
   background-image: url('../img/rose-6870.gif'), url('../img/cat-974.gif');
   background-position: right bottom, center;
+  background-attachment: fixed;
   background-size: 25%, cover;
   background-repeat: no-repeat;
   height: 100vh;
+  width: 100%;
 }
 
 .container {
   max-width: 1440px;
   padding: 36px 156px;
+}
+
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
 }
 
-button {
+.btn {
   position: relative;
   padding: 8px 16px;
   border: none;
@@ -37,13 +42,13 @@ button {
   );
 }
 
-button:hover {
+.btn:hover {
   color: #f0094a;
   background: transparent;
   box-shadow: none;
 }
-button:before,
-button:after {
+.btn:before,
+.btn:after {
   content: '';
   position: absolute;
   top: 0;
@@ -55,14 +60,14 @@ button:after {
     4px 4px 5px 0px #0002;
   transition: 400ms ease all;
 }
-button:after {
+.btn:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
-button:hover:before,
-button:hover:after {
+.btn:hover:before,
+.btn:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
